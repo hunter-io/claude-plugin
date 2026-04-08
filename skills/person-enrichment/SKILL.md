@@ -38,12 +38,17 @@ Get a detailed profile of a person from their email address.
 | **Twitter** | @janesmith |
 
 ## Next Actions
-1. Verify this email address
-2. Find more contacts at stripe.com
-3. Enrich Stripe with company details
+1. Verify this email address (Email-Verifier)
+2. Save as a lead (Upsert-Lead)
+3. Find more contacts at stripe.com (Domain-Search)
+4. Enrich Stripe with company details (Company-Enrichment)
 ```
 
 4. **If no data is found,** respond: "No data available for [email]. Try enriching their company domain instead, or use Domain Search to find other contacts at this company."
+
+## Credit Cost
+
+Costs 1 enrichment credit — only charged if data is found.
 
 ## Success Criteria
 

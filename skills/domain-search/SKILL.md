@@ -25,17 +25,19 @@ Find all contacts and email addresses associated with a company domain.
    - "Stripe" or "stripe" -> infer domain as "stripe.com"
    - If unsure about the domain, ask the user to confirm.
 
-2. **Call `Domain-Search`** with the `domain`. The API supports these optional parameters for server-side filtering (more efficient than filtering after the fact):
+2. **Call `Domain-Search`** with the `domain`. Use server-side filters when the user specifies criteria:
    - `type`: `personal` or `generic`
    - `seniority`: comma-separated from `junior`, `senior`, `executive`
-   - `department`: comma-separated from `executive`, `it`, `finance`, `management`, `sales`, `legal`, `operations`, `customer_success`, `business_development`, `marketing`, `hr`, `support`, `logistics`, `procurement`, `engineering`, `product`, `design`, `healthcare`, `media_communication`, `teaching`, `security`
+   - `department`: comma-separated from `executive`, `it`, `finance`, `management`, `sales`, `legal`, `support`, `hr`, `marketing`, `communication`, `education`, `design`, `health`, `operations`
+   - `required_field`: `full_name`, `position`, or `phone_number` — only return results where this field has a value
    - `limit`: 1-100 (default 10)
    - `offset`: for pagination
 
-   **Note:** The MCP tool currently only exposes the `domain` parameter. Use client-side filtering for now on the returned results:
-   - "marketing team" -> show only contacts with marketing-related positions
-   - "executives" / "C-suite" / "leadership" -> show contacts with senior titles (CEO, CTO, VP, Director, etc.)
-   - "engineering" -> show contacts with engineering/technical positions
+   **Mapping user requests to filters:**
+   - "marketing team" -> `department: "marketing"`
+   - "executives" / "C-suite" / "leadership" -> `seniority: "executive"`
+   - "engineering" / "developers" -> `department: "it"`
+   - "senior people" -> `seniority: "senior,executive"`
    - No filter specified -> show the top contacts by confidence score
 
 4. **Present the results:**
@@ -53,10 +55,11 @@ Find all contacts and email addresses associated with a company domain.
 | ... | ... | ... | ... |
 
 ## Next Actions
-1. Show more contacts
+1. Show more contacts (use offset to paginate)
 2. Filter by department (e.g., "show me the marketing team")
-3. Verify all email addresses (uses 0.5 credits per email)
-4. Enrich Stripe with company details
+3. Verify email addresses (1 verification credit each)
+4. Save contacts as leads (Upsert-Lead or Create-Lead)
+5. Enrich Stripe with company details (Company-Enrichment)
 ```
 
 5. **If the user asks for more,** present the next batch of results.
@@ -65,6 +68,10 @@ Find all contacts and email addresses associated with a company domain.
    - Check the domain spelling
    - The company may be too new or too small for our database
    - Try `Discover` to find similar companies
+
+## Credit Cost
+
+Costs 1 search credit per 10 emails returned (rounded up) — only charged if emails are found.
 
 ## Success Criteria
 

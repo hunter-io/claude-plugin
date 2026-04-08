@@ -67,6 +67,10 @@ Safe to send. This email address is deliverable with high confidence.
 **Results:** 1 valid, 1 accept_all, 1 invalid
 ```
 
+## Credit Cost
+
+Costs 1 verification credit per email — only charged for valid, invalid, or accept_all results.
+
 ## Success Criteria
 
 Verification status returned with a clear, actionable recommendation the user can act on immediately.

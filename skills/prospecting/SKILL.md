@@ -32,18 +32,17 @@ If `Discover` returns more than 10 companies, present the full list and ask:
 
 ### Step 2: Find Contacts
 
-For each company, call `Domain-Search` with the company's `domain`.
-
-Filter the results based on the user's request:
-- "CTOs" or "engineering leaders" -- filter by position keywords
-- "marketing team" -- filter by marketing-related positions
-- "executives" or "C-suite" -- filter by seniority-related titles
+For each company, call `Domain-Search` with the company's `domain`. Use server-side filters:
+- "CTOs" or "engineering leaders" -> `department: "it"`, `seniority: "executive"`
+- "marketing team" -> `department: "marketing"`
+- "executives" or "C-suite" -> `seniority: "executive"`
+- "senior people" -> `seniority: "senior,executive"`
 
 Report progress for multi-company searches: "Searching stripe.com... found 15 contacts. Moving to notion.so..."
 
-### Step 3: Verify Emails
+### Step 3: Verify Emails (Optional)
 
-> Before verifying, confirm credit usage: "I found [N] contacts across [M] companies. Verifying all emails will use [N × 0.5 = X] credits. Proceed?"
+> Before verifying, confirm credit usage: "I found [N] contacts across [M] companies. Verifying all emails will use [N] verification credits. Proceed?"
 
 Only verify after the user confirms. Call `Email-Verifier` for each contact's `email`.
 
@@ -53,7 +52,18 @@ If the user says "skip verification," present unverified results instead.
 
 If the user asks for more company context, call `Company-Enrichment` for each company's `domain`. Only run this step if requested -- do not run by default.
 
-### Step 5: Present Results
+### Step 5: Save to Hunter Leads
+
+After presenting results, offer to save contacts:
+
+> "Would you like me to save these contacts to your Hunter leads? I can create a new list for them."
+
+If the user confirms:
+1. Call `Create-Leads-List` with a descriptive name (e.g., "Fintech CTOs - France - 2026-04-08").
+2. For each contact, call `Upsert-Lead` with the contact's data and the new `leads_list_id`.
+3. Present the deep-link: "View your leads list: https://hunter.io/leads?leads_list_id={id}"
+
+### Step 6: Present Results
 
 Present a consolidated table grouped by company:
 
@@ -70,18 +80,23 @@ Present a consolidated table grouped by company:
 | ... | ... | ... | valid / accept_all / invalid / unknown |
 
 ## Next Steps
-1. Copy this list to your CRM
-2. Export as CSV
+1. Save contacts to a Hunter leads list (Upsert-Lead)
+2. Add contacts to a campaign (Add-Campaign-Recipients)
 3. Verify the risky addresses again later
 4. Search for more companies with different criteria
 ```
 
+## Credit Costs
+
+- `Discover` — Free (no credits)
+- `Domain-Search` — 1 search credit per 10 emails returned (rounded up)
+- `Email-Verifier` — 1 verification credit per email
+- `Company-Enrichment` — 1 enrichment credit per domain
+- `Upsert-Lead`, `Create-Leads-List`, `Save-Company` — Free (no credits)
+
 ## Important Notes
 
-- Each `Domain-Search` call uses 1 credit per 10 results returned
-- Each `Email-Verifier` call uses 0.5 credits
-- `Discover` is free -- encourage the user to explore and refine criteria
-- `Company-Enrichment` uses 0.2 credits per call
 - Always confirm before running verification on large batches
 - If a company returns zero contacts, skip it and note it in the output
 - If the user interrupts mid-workflow, present partial results gathered so far
+- Prefer `Upsert-Lead` over `Create-Lead` to avoid duplicates

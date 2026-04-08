@@ -46,12 +46,17 @@ Stripe builds economic infrastructure for the internet, enabling businesses to a
 - Twitter: @stripe
 
 ## Next Actions
-1. Find contacts at stripe.com
+1. Find contacts at stripe.com (Domain-Search)
 2. Search for similar companies with Discover
-3. Find a specific person's email at Stripe
+3. Find a specific person's email at Stripe (Email-Finder)
+4. Save this company to your leads (Save-Company)
 ```
 
 4. **If the domain is unknown,** respond: "No company data available for [domain]. Try checking the spelling, or use Discover to search for companies by name."
+
+## Credit Cost
+
+Costs 1 enrichment credit — only charged if data is found.
 
 ## Success Criteria
 

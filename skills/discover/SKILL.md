@@ -38,11 +38,12 @@ Search for companies matching any criteria. This is completely free -- no credit
 | ... | ... | ... | ... | ... |
 
 ## Next Actions
-1. Show more results
-2. Find contacts at one of these companies
-3. Enrich a company for more details
-4. Narrow the search (e.g., "only companies using React")
-5. Find similar companies (e.g., "companies like Qonto")
+1. Show more results (use offset to paginate)
+2. Find contacts at one of these companies (Domain-Search)
+3. Enrich a company for more details (Company-Enrichment)
+4. Save companies as leads (Save-Company)
+5. Narrow the search (e.g., "only companies using React")
+6. Find similar companies (e.g., "companies like Qonto")
 ```
 
 3. **If results are too broad** (hundreds of companies), suggest narrowing: "That's a broad search. Try adding filters like industry, company size, location, or technology to narrow the results."

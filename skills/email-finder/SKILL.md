@@ -43,14 +43,19 @@ Find the most likely email address for a person at a company using their name an
 - LinkedIn profile (last seen: 2026-01-20)
 
 ## Next Actions
-1. Verify this email address
-2. Enrich this contact with more details
-3. Find more contacts at stripe.com
+1. Verify this email address (Email-Verifier)
+2. Save as a lead (Upsert-Lead)
+3. Enrich this contact with more details (Email-Enrichment)
+4. Find more contacts at stripe.com (Domain-Search)
 ```
 
 4. **If no email is found,** suggest alternatives:
    - "I couldn't find an email for [name] at [domain]. Would you like me to search all contacts at [domain] instead? That might help find the right person."
    - Suggest checking the spelling of the name or trying a different domain variation.
+
+## Credit Cost
+
+Costs 1 search credit — only charged if an email is found.
 
 ## Success Criteria
 
