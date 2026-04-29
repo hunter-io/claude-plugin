@@ -21,7 +21,7 @@ Get a detailed profile of a person from their email address.
 
 1. **Parse the input.** Extract the `email` address.
 
-2. **Call `Email-Enrichment`** with the `email`.
+2. **Call `Person-Enrichment`** with the `email`.
 
 3. **Present the person profile:**
 
@@ -38,10 +38,10 @@ Get a detailed profile of a person from their email address.
 | **Twitter** | @janesmith |
 
 ## Next Actions
-1. Verify this email address (Email-Verifier)
-2. Save as a lead (Upsert-Lead)
-3. Find more contacts at stripe.com (Domain-Search)
-4. Enrich Stripe with company details (Company-Enrichment)
+1. Verify this email address (`Email-Verifier`)
+2. Save as a lead (`Upsert-Lead`)
+3. Find more contacts at stripe.com (`Domain-Search`)
+4. Enrich Stripe with company details (`Company-Enrichment`)
 ```
 
 4. **If no data is found,** respond: "No data available for [email]. Try enriching their company domain instead, or use Domain Search to find other contacts at this company."

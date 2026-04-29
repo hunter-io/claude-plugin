@@ -45,7 +45,7 @@ Find the most likely email address for a person at a company using their name an
 ## Next Actions
 1. Verify this email address (Email-Verifier)
 2. Save as a lead (Upsert-Lead)
-3. Enrich this contact with more details (Email-Enrichment)
+3. Enrich this contact with more details (Person-Enrichment)
 4. Find more contacts at stripe.com (Domain-Search)
 ```
 
