@@ -1,0 +1,29 @@
+{
+  "name": "hunter",
+  "version": "0.1.0",
+  "description": "Find and verify professional email addresses, search contacts by domain, and enrich company data.",
+  "author": {
+    "name": "Hunter.io",
+    "url": "https://hunter.io"
+  },
+  "homepage": "https://hunter.io",
+  "repository": "https://github.com/hunter-io/claude-plugin",
+  "license": "MIT",
+  "keywords": ["hunter", "email", "leads", "b2b", "prospecting", "sales", "enrichment", "verification"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Hunter",
+    "shortDescription": "Find, verify, and enrich professional contacts.",
+    "longDescription": "Use Hunter to find professional email addresses, verify deliverability, search contacts by company domain, enrich company and person data, and build prospecting workflows.",
+    "developerName": "Hunter.io",
+    "category": "Sales",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://hunter.io/",
+    "defaultPrompt": [
+      "Find Jane Smith's email at Stripe.",
+      "Who works at notion.com?",
+      "Build a prospect list of CTOs at fintech startups."
+    ]
+  }
+}
