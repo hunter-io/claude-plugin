@@ -1,0 +1,14 @@
+{
+  "name": "hunter",
+  "owner": {
+    "name": "Hunter.io",
+    "url": "https://hunter.io"
+  },
+  "plugins": [
+    {
+      "name": "hunter",
+      "source": "./",
+      "description": "Find and verify professional email addresses, search contacts by domain, and enrich company data -- directly in Claude."
+    }
+  ]
+}
