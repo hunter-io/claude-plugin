@@ -1,7 +1,7 @@
 {
   "name": "hunter",
   "version": "0.1.0",
-  "description": "Find and verify professional email addresses, search contacts by domain, and enrich company data.",
+  "description": "Find and verify professional email addresses, search contacts by domain, enrich company and person data, organize leads and lists, run outreach sequences, and push to your CRM.",
   "author": {
     "name": "Hunter.io",
     "url": "https://hunter.io"
@@ -9,13 +9,13 @@
   "homepage": "https://hunter.io",
   "repository": "https://github.com/hunter-io/claude-plugin",
   "license": "MIT",
-  "keywords": ["hunter", "email", "leads", "b2b", "prospecting", "sales", "enrichment", "verification"],
+  "keywords": ["hunter", "email", "leads", "b2b", "prospecting", "sales", "enrichment", "verification", "sequences", "outreach", "crm"],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Hunter",
-    "shortDescription": "Find, verify, and enrich professional contacts.",
-    "longDescription": "Use Hunter to find professional email addresses, verify deliverability, search contacts by company domain, enrich company and person data, and build prospecting workflows.",
+    "shortDescription": "Find, verify, and enrich contacts, then run outreach.",
+    "longDescription": "Use Hunter to find professional email addresses, verify deliverability, search contacts by company domain, discover companies and people, enrich company and person data, organize leads and lists, run email outreach sequences, and push leads to your CRM.",
     "developerName": "Hunter.io",
     "category": "Sales",
     "capabilities": ["Interactive", "Read", "Write"],
@@ -23,7 +23,8 @@
     "defaultPrompt": [
       "Find Jane Smith's email at Stripe.",
       "Who works at notion.com?",
-      "Build a prospect list of CTOs at fintech startups."
+      "Build a prospect list of CTOs at fintech startups.",
+      "Set up a 3-step outreach sequence for my leads and start it."
     ]
   }
 }

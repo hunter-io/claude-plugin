@@ -25,6 +25,8 @@ Find all contacts and email addresses associated with a company domain.
    - "Stripe" or "stripe" -> infer domain as "stripe.com"
    - If unsure about the domain, ask the user to confirm.
 
+   **Free pre-check first (optional).** If the user wants to size how many **contacts/emails** Hunter has for a domain before paying, call `Email-Count` *before* `Domain-Search`. It's free and takes a `domain` plus an optional `personal`/`generic` `type`. It returns email totals only — not company headcount (use company-enrichment for employee counts) — and can't filter the count by role or department (only the paid `Domain-Search` filters by seniority/department).
+
 2. **Call `Domain-Search`** with the `domain`. Use server-side filters when the user specifies criteria:
    - `type`: `personal` or `generic`
    - `seniority`: comma-separated from `junior`, `senior`, `executive`
@@ -58,7 +60,7 @@ Find all contacts and email addresses associated with a company domain.
 1. Show more contacts (use offset to paginate)
 2. Filter by department (e.g., "show me the marketing team")
 3. Verify email addresses (1 verification credit each)
-4. Save contacts as leads (Upsert-Lead or Create-Lead)
+4. Save contacts as leads (Create-Lead-If-Missing — adds without overwriting existing leads)
 5. Enrich Stripe with company details (Company-Enrichment)
 ```
 
@@ -67,7 +69,7 @@ Find all contacts and email addresses associated with a company domain.
 6. **If zero results,** suggest:
    - Check the domain spelling
    - The company may be too new or too small for our database
-   - Try `Discover` to find similar companies
+   - Try `Find-Companies` to find similar companies
 
 ## Credit Cost
 

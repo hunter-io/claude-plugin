@@ -1,6 +1,6 @@
 {
   "name": "hunter",
-  "description": "Find and verify professional email addresses, search contacts by domain, and enrich company data -- directly in Claude.",
+  "description": "Find and verify professional email addresses, search contacts by domain, enrich company and person data, organize leads and lists, run outreach sequences, and push to your CRM -- directly in Claude.",
   "version": "0.1.0",
   "author": {
     "name": "Hunter.io",
@@ -9,5 +9,5 @@
   "homepage": "https://hunter.io",
   "repository": "https://github.com/hunter-io/claude-plugin",
   "license": "MIT",
-  "keywords": ["hunter", "email", "leads", "b2b", "prospecting", "sales", "enrichment", "verification"]
+  "keywords": ["hunter", "email", "leads", "b2b", "prospecting", "sales", "enrichment", "verification", "sequences", "outreach", "crm"]
 }

@@ -21,7 +21,7 @@ Get a detailed profile of a person from their email address.
 
 1. **Parse the input.** Extract the `email` address.
 
-2. **Call `Person-Enrichment`** with the `email`.
+2. **Call `Person-Enrichment`** with the `email`. To retrieve both the person and their company in a single call, use `Combined-Enrichment` instead.
 
 3. **Present the person profile:**
 
@@ -39,7 +39,7 @@ Get a detailed profile of a person from their email address.
 
 ## Next Actions
 1. Verify this email address (`Email-Verifier`)
-2. Save as a lead (`Upsert-Lead`)
+2. Save as a lead (`Create-Lead-If-Missing` — adds without overwriting an existing lead)
 3. Find more contacts at stripe.com (`Domain-Search`)
 4. Enrich Stripe with company details (`Company-Enrichment`)
 ```
@@ -48,7 +48,7 @@ Get a detailed profile of a person from their email address.
 
 ## Credit Cost
 
-Costs 1 enrichment credit — only charged if data is found.
+Costs 1–2 enrichment credits (plan-dependent — 1 on two-bucket plans, 2 on single-credit-bucket plans) — only charged if data is found.
 
 ## Success Criteria
 
