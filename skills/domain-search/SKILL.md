@@ -30,7 +30,7 @@ Find all contacts and email addresses associated with a company domain.
 2. **Call `Domain-Search`** with the `domain`. Use server-side filters when the user specifies criteria:
    - `type`: `personal` or `generic`
    - `seniority`: comma-separated from `junior`, `senior`, `executive`
-   - `department`: comma-separated from `executive`, `it`, `finance`, `management`, `sales`, `legal`, `support`, `hr`, `marketing`, `communication`, `education`, `design`, `health`, `operations`
+   - `department`: comma-separated from `executive`, `it`, `finance`, `management`, `sales`, `legal`, `support`, `hr`, `marketing`, `communication`, `education`, `design`, `health`, `operations`, `product`, `research`, `consulting`, `administrative`, `procurement`
    - `required_field`: `full_name`, `position`, or `phone_number` — only return results where this field has a value
    - `limit`: 1-100 (default 10)
    - `offset`: for pagination
