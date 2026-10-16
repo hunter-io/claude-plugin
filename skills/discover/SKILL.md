@@ -38,7 +38,7 @@ Find companies matching any criteria and size how many contacts they hold — al
 | ... | ... | ... | ... | ... |
 
 ## Next Actions
-1. Narrow or refine the criteria to surface different results (Find-Companies / Find-People have no offset paging)
+1. Narrow or refine the criteria, or page with `limit`/`offset` (max 100 per call) when more companies match. Plans without Discover paging get only the first page.
 2. Find the actual contacts at one of these (Domain-Search — consumes credits)
 3. Estimate how many contacts these companies hold, free (see "Sizing a batch" below)
 4. Save companies to a list (company-lists skill)
