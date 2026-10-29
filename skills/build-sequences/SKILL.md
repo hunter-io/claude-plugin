@@ -61,7 +61,7 @@ If a precondition is missing, say exactly what to fix. Once clear, call `Start-S
 - `Pause-Sequence` / `Resume-Sequence` to hold or continue.
 - `Archive-Sequence` to retire a finished sequence.
 - `Get-Sequence-Stats` for sent / open / reply / bounce numbers.
-- `Update-Sequence` to rename or adjust settings — but once a sequence has **started**, only the name (and unsubscribe-link toggle) stay editable; sender, schedule, BCC, and tracking lock on start, so set those while it's still a draft.
+- `Update-Sequence` to rename or adjust settings — but once a sequence has **started**, only the name, the unsubscribe-link toggle, and the unsubscribe wording (`unsubscribe_sentence`, `unsubscribe_sentence_plain_text`) stay editable; sender, schedule, BCC, and tracking lock on start, so set those while it's still a draft. The HTML wording must wrap the link text in `{{link}}…{{/link}}` exactly once, in 200 characters or fewer; an empty string goes back to the account's default.
 
 ```
 # Sequence: Q2 Outreach
