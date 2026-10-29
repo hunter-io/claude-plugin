@@ -1,6 +1,6 @@
 {
   "name": "hunter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Find and verify professional email addresses, search contacts by domain, enrich company and person data, organize leads and lists, run outreach sequences, and push to your CRM.",
   "author": {
     "name": "Hunter.io",
@@ -20,10 +20,12 @@
     "category": "Sales",
     "capabilities": ["Interactive", "Read", "Write"],
     "websiteURL": "https://hunter.io/",
+    "privacyPolicyURL": "https://hunter.io/privacy-policy",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
     "defaultPrompt": [
       "Find Jane Smith's email at Stripe.",
       "Who works at notion.com?",
-      "Build a prospect list of CTOs at fintech startups.",
       "Set up a 3-step outreach sequence for my leads and start it."
     ]
   }
