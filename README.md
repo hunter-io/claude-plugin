@@ -195,6 +195,7 @@ Try: "Save these companies to a Target Accounts list."
 | `Delete-Company-List-Folder` | Delete Company List Folder | Free | Irreversible |
 | `Favorite-Company-List` | Favorite Company List | Free | Writes |
 | `Get-Company-List` | Get Company List | Free | Reads |
+| `List-Company-List-Companies` | List Company List Companies | Free | Reads |
 | `List-Company-List-Folders` | List Company List Folders | Free | Reads |
 | `List-Company-Lists` | List Company Lists | Free | Reads |
 | `Remove-Company-From-List` | Remove Company from List | Free | Writes |
